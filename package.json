@@ -1,0 +1,13 @@
+{
+  "name": "concretum-web-modern",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site for Concretum Operis, served by a zero-dependency Node server.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
