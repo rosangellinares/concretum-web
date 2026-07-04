@@ -6,6 +6,14 @@
         html {
           background: #f2f2f0;
         }
+
+        nav.nav-scrolled {
+          background-color: #fff;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        nav.nav-scrolled [class*="text-white"] {
+          color: #121212;
+        }
       </style>
       <link
         href="../../solid-build-craft.base44.app/favicon3986aaca.svg"
@@ -4042,6 +4050,7 @@
       <div id="root">
         <div class="min-h-screen flex flex-col bg-[#F2F2F0]">
           <nav
+            id="site-nav"
             class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent"
           >
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -4721,6 +4730,17 @@
               close();
             }
           });
+        })();
+      </script>
+      <script>
+        (function () {
+          var nav = document.getElementById("site-nav");
+          if (!nav) return;
+          function onScroll() {
+            nav.classList.toggle("nav-scrolled", window.scrollY > 40);
+          }
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
         })();
       </script>
     </body>
