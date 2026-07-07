@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    image: concretum-web-modern
+    ports:
+      - "7779:7779"
+    restart: unless-stopped
+    init: true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

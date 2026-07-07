@@ -7,6 +7,7 @@ Copia estática del sitio de Concretum Operis (`solid-build-craft.base44.app`), 
 - `public/` — el sitio estático completo (HTML por ruta, assets con nombre por hash, service worker de precache)
 - `server.js` — servidor HTTP en Node puro (`node:http`), sin dependencias
 - `package.json` — script `start`, cero dependencias de producción
+- `Dockerfile` / `docker-compose.yml` — capa de contenedores para el despliegue (imagen `node:22-alpine`, non-root)
 
 No hay paso de build: `public/` ya es el resultado final.
 
@@ -34,6 +35,22 @@ El sitio usa una carpeta por ruta (`about/index.html`, `contact/index.html`, etc
 ## Despliegue en VPS
 
 **Prerrequisito**: se asume que la VPS ya tiene un reverse proxy (nginx o Caddy) delante para TLS. Este servidor solo habla HTTP en un puerto interno.
+
+### Opción recomendada: Docker
+
+La forma más sencilla. El contenedor escucha en el **puerto `7779`** (fijado en el `Dockerfile` y en el mapeo del compose), non-root, con healthcheck y reinicio automático.
+
+```bash
+git clone <ruta-o-url-del-repo> /opt/concretum-web-modern
+cd /opt/concretum-web-modern
+docker compose up -d --build
+```
+
+Comprueba el estado (`docker compose ps` debe mostrar `healthy`) y apunta el reverse proxy con `proxy_pass` al puerto `7779` interno. Para actualizar tras un `git pull`, repite `docker compose up -d --build`.
+
+### Alternativa: systemd + Node
+
+Si no quieres Docker en la VPS, corre el servidor directamente:
 
 1. Clona el repo en la VPS y entra en el directorio:
    ```bash
