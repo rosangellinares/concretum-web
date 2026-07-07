@@ -22,17 +22,17 @@ const MIME_TYPES = {
   ".txt": "text/plain; charset=utf-8",
 };
 
-function resolveRoute(pathname) {
+function resolveFilePath(pathname) {
   const decoded = decodeURIComponent(pathname);
   const safePath = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
   const requested = join(PUBLIC_DIR, safePath);
 
   if (!requested.startsWith(PUBLIC_DIR)) return null;
 
-  if (existsSync(requested) && statSync(requested).isFile()) return { filePath: requested };
+  if (existsSync(requested) && statSync(requested).isFile()) return requested;
 
   const indexCandidate = join(requested, "index.html");
-  if (existsSync(indexCandidate)) return { filePath: indexCandidate, isDirIndex: true };
+  if (existsSync(indexCandidate)) return indexCandidate;
 
   return null;
 }
@@ -40,31 +40,23 @@ function resolveRoute(pathname) {
 const server = createServer((req, res) => {
   const [pathname, query = ""] = req.url.split(/(?=\?)/);
 
-  // Redirect legacy /path/index.html URLs (bookmarks, old links) to the clean
-  // directory form /path/, matching how the site now links internally.
-  if (pathname.endsWith("/index.html")) {
-    res.writeHead(301, { Location: pathname.slice(0, -"index.html".length) + query });
+  // Canonical URL form is extensionless and slash-less (/about, not /about/ or
+  // /about/index.html). Redirect the legacy/trailing-slash variants to it; the
+  // pages link with absolute root-relative paths, so no trailing slash is needed.
+  const canonical = pathname.replace(/\/index\.html$/, "").replace(/(.)\/$/, "$1");
+  if (canonical !== pathname) {
+    res.writeHead(301, { Location: (canonical || "/") + query });
     res.end();
     return;
   }
 
-  const route = resolveRoute(pathname);
+  const filePath = resolveFilePath(pathname);
 
-  if (!route) {
+  if (!filePath) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     res.end("404 Not Found");
     return;
   }
-
-  // Normalize directory routes to a trailing slash so the pages' relative links
-  // (../contact/, ../../) resolve against the right base path.
-  if (route.isDirIndex && !pathname.endsWith("/")) {
-    res.writeHead(301, { Location: pathname + "/" + query });
-    res.end();
-    return;
-  }
-
-  const filePath = route.filePath;
 
   const headers = { "Content-Type": MIME_TYPES[extname(filePath)] || "application/octet-stream" };
   headers["Cache-Control"] = filePath.endsWith("/sw.js") || filePath.endsWith("\\sw.js")
