@@ -22,29 +22,49 @@ const MIME_TYPES = {
   ".txt": "text/plain; charset=utf-8",
 };
 
-function resolveFilePath(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+function resolveRoute(pathname) {
+  const decoded = decodeURIComponent(pathname);
   const safePath = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
   const requested = join(PUBLIC_DIR, safePath);
 
   if (!requested.startsWith(PUBLIC_DIR)) return null;
 
-  if (existsSync(requested) && statSync(requested).isFile()) return requested;
+  if (existsSync(requested) && statSync(requested).isFile()) return { filePath: requested };
 
   const indexCandidate = join(requested, "index.html");
-  if (existsSync(indexCandidate)) return indexCandidate;
+  if (existsSync(indexCandidate)) return { filePath: indexCandidate, isDirIndex: true };
 
   return null;
 }
 
 const server = createServer((req, res) => {
-  const filePath = resolveFilePath(req.url);
+  const [pathname, query = ""] = req.url.split(/(?=\?)/);
 
-  if (!filePath) {
+  // Redirect legacy /path/index.html URLs (bookmarks, old links) to the clean
+  // directory form /path/, matching how the site now links internally.
+  if (pathname.endsWith("/index.html")) {
+    res.writeHead(301, { Location: pathname.slice(0, -"index.html".length) + query });
+    res.end();
+    return;
+  }
+
+  const route = resolveRoute(pathname);
+
+  if (!route) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     res.end("404 Not Found");
     return;
   }
+
+  // Normalize directory routes to a trailing slash so the pages' relative links
+  // (../contact/, ../../) resolve against the right base path.
+  if (route.isDirIndex && !pathname.endsWith("/")) {
+    res.writeHead(301, { Location: pathname + "/" + query });
+    res.end();
+    return;
+  }
+
+  const filePath = route.filePath;
 
   const headers = { "Content-Type": MIME_TYPES[extname(filePath)] || "application/octet-stream" };
   headers["Cache-Control"] = filePath.endsWith("/sw.js") || filePath.endsWith("\\sw.js")
