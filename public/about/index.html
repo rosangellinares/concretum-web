@@ -14,6 +14,15 @@
         nav.nav-scrolled [class*="text-white"] {
           color: #121212;
         }
+        .logo-dark {
+          display: none;
+        }
+        nav.nav-scrolled .logo-light {
+          display: none;
+        }
+        nav.nav-scrolled .logo-dark {
+          display: inline-block;
+        }
       </style>
       <link
         href="/img-logo.svg"
@@ -4025,7 +4034,7 @@
           >
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
               <div class="flex items-center justify-between h-20">
-                <a class="flex items-center gap-3 group" href="/"><div class="w-10 h-10 bg-[#121212] flex items-center justify-center overflow-hidden"><img src="/img-logo.svg" alt="Concretum Operis" class="w-full h-full object-cover" /></div><div class="flex flex-col"><span class="font-heading font-bold text-lg tracking-tight leading-tight transition-colors text-white">CONCRETUM</span><span class="font-mono text-[10px] tracking-[0.3em] uppercase transition-colors text-white/70">Operis</span></div></a>
+                <a class="flex items-center gap-3 group" href="/"><img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto logo-light" /><img src="/img-logo-dark.svg" alt="Concretum Operis" class="h-10 w-auto logo-dark" /><div class="flex flex-col"><span class="font-heading font-bold text-lg tracking-tight leading-tight transition-colors text-white">CONCRETUM</span><span class="font-mono text-[10px] tracking-[0.3em] uppercase transition-colors text-white/70">Operis</span></div></a>
                 <div class="hidden lg:flex items-center gap-10">
                   <a
                     class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
