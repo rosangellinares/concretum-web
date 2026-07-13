@@ -4313,15 +4313,6 @@
                     ></div>
                   </button>
                 </div>
-                <div
-                  class="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10 z-20"
-                >
-                  <div
-                    id="hero-progress-bar"
-                    class="h-full bg-[#D45500]"
-                    style="width: 0%"
-                  ></div>
-                </div>
               </section>
               <section class="bg-[#121212] border-t border-white/10">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -5593,11 +5584,9 @@
           var slides = document.querySelectorAll(".hero-slide");
           var dots = document.querySelectorAll(".hero-dot");
           var bars = document.querySelectorAll(".hero-dot-bar");
-          var progress = document.getElementById("hero-progress-bar");
           if (!slides.length) return;
           var CYCLE_MS = 6000;
           var current = 0;
-          var progressStart = Date.now();
           function show(i) {
             slides.forEach(function (s, idx) {
               s.style.opacity = idx === i ? "1" : "0";
@@ -5612,7 +5601,6 @@
               }
             });
             current = i;
-            progressStart = Date.now();
           }
           function next() {
             show((current + 1) % slides.length);
@@ -5626,17 +5614,6 @@
               cycleTimer = setInterval(next, CYCLE_MS);
             });
           });
-          function tickProgress() {
-            if (progress) {
-              var pct = Math.min(
-                100,
-                ((Date.now() - progressStart) / CYCLE_MS) * 100,
-              );
-              progress.style.width = pct + "%";
-            }
-            requestAnimationFrame(tickProgress);
-          }
-          requestAnimationFrame(tickProgress);
         })();
       </script>
       <script>
