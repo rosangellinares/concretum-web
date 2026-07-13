@@ -104,6 +104,44 @@ Los cambios en HTML/CSS se ven recargando. **Solo** hay que reiniciar si se ha t
 `pkill -f "node server.js"`), verifica con `curl` que el puerto 3000 ya no responde y dilo en una
 frase. No afecta al servidor de producción — esto es solo su ordenador.
 
+### "Cambiar la marca"
+
+**Cambia algo que afecta a toda la web, no a una página.** También sirven variantes como "el color
+de la marca ahora es azul", "cambia el teléfono en toda la web", "usa otra tipografía".
+
+Un cambio de marca tiene **dos caras y son inseparables**:
+
+1. **La web**: aplicarlo en todas las páginas donde aparezca (no solo donde él lo vio).
+2. **`MARCA.md`**: actualizar el dato, para que la guía no quede mintiendo.
+
+Procedimiento:
+
+1. Localiza **todas** las apariciones antes de tocar nada (`grep -r` sobre `public/`) y dile cuántas
+   son y en qué páginas: "el naranja aparece 488 veces, en las 10 páginas".
+2. Confírmale el alcance con `AskUserQuestion` — es un cambio irreversible a ojo y conviene que sepa
+   que va a afectar a todo el sitio.
+3. Aplícalo en la web **y** actualiza `MARCA.md` en el mismo movimiento.
+4. Pasa `node scripts/revisar-web.mjs` para asegurarte de que nada se rompió.
+5. Resume por lo que se ve y recuérdale "Visualizar cambios en local" antes de confirmar.
+
+### Detección de cambios de marca (regla permanente)
+
+**Nunca modifiques nada de `MARCA.md` de forma silenciosa, ni dejes que la web se desvíe de él sin
+avisar.** Si una petición cualquiera —aunque parezca local— toca uno de estos elementos:
+
+- un **color** de la paleta, una **tipografía**, el **correo** o el **teléfono** oficiales,
+- el **tono** de los textos, o el **idioma** de la web,
+
+entonces **párate antes de editar** y pregúntale explícitamente con `AskUserQuestion`:
+
+- **¿Solo aquí?** — lo cambio únicamente en la página que ha pedido, y `MARCA.md` sigue mandando en
+  el resto. Deja constancia de que esa página queda como excepción.
+- **¿En toda la web?** — es un cambio de marca: sigue el procedimiento de "Cambiar la marca" y
+  actualiza `MARCA.md`.
+
+Ejemplo: pide "pon el botón de Contacto en azul". El azul no está en la paleta → preguntas si es un
+capricho de esa página o el nuevo color de la marca. No lo decidas tú.
+
 ### "Revisa la web"
 
 **Comprueba que no he roto nada.**

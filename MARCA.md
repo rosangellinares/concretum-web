@@ -3,6 +3,11 @@
 Datos de la web para que cualquier cambio salga coherente sin tener que describirlos cada vez.
 **Si algo de aquí contradice lo que ves en la web, gana este documento** — y avísalo.
 
+> **Cómo se cambia esto:** solo el propietario decide. Si una petición toca un color, una tipografía,
+> el contacto, el tono o el idioma, hay que preguntarle si es solo para esa página o para toda la
+> marca; si es para la marca, se cambia la web **y** este archivo a la vez. Ver "Cambiar la marca" y
+> "Detección de cambios de marca" en `CLAUDE.md`. Nunca se edita en silencio.
+
 ## Idioma
 
 La web está **en inglés** (`lang="en-US"`; el negocio opera en Richmond, California). El propietario
