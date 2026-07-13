@@ -16,14 +16,22 @@ Node sin dependencias, desplegable en un VPS con Docker detrás de un proxy inve
 Él nombra las páginas en español; las rutas reales están en inglés. Traduce tú, nunca le pidas la
 ruta.
 
-| Como la llama él       | Dirección real    |
-|------------------------|-------------------|
-| Inicio / portada       | `/`               |
-| Sobre nosotros         | `/about`          |
-| Servicios              | `/services`       |
-| Proyectos              | `/projects`       |
-| Contacto               | `/contact`        |
-| Política de privacidad | `/privacy-policy` |
+| Como la llama él                | Dirección real                    |
+|---------------------------------|-----------------------------------|
+| Inicio / portada                | `/`                               |
+| Sobre nosotros                  | `/about`                          |
+| Servicios                       | `/services`                       |
+| Hormigón (servicio)             | `/services/concrete-richmond-ca`  |
+| Excavación (servicio)           | `/services/excavation-richmond-ca`|
+| Perforación (servicio)          | `/services/drilling-richmond-ca`  |
+| Proyectos                       | `/projects`                       |
+| Contacto                        | `/contact`                        |
+| Política de privacidad          | `/privacy-policy`                 |
+
+(`/unknown` es la página de error interna; no se toca salvo petición explícita.)
+
+**La web está en inglés** (`lang="en-US"`). Él pide en español, pero todo texto publicado se escribe
+en inglés. Colores, tipografías, contacto y tono: ver `MARCA.md`, y respétalo en cada cambio.
 
 Zonas de una página, en sus palabras:
 
@@ -95,6 +103,50 @@ Los cambios en HTML/CSS se ven recargando. **Solo** hay que reiniciar si se ha t
 **Ya he terminado de mirar.** Mata el proceso `node server.js` (el del background de la sesión, o
 `pkill -f "node server.js"`), verifica con `curl` que el puerto 3000 ya no responde y dilo en una
 frase. No afecta al servidor de producción — esto es solo su ordenador.
+
+### "Revisa la web"
+
+**Comprueba que no he roto nada.**
+
+Ejecuta `node scripts/revisar-web.mjs`: recorre todas las páginas de `public/` y verifica que ningún
+enlace, imagen, hoja de estilo o script apunta a algo inexistente (resolviendo las rutas igual que
+`server.js`).
+
+- Si sale limpio: dilo en una frase ("Las 10 páginas cargan y no hay ningún enlace ni imagen rota").
+- Si hay roturas: explícalas por lo que el visitante vería ("en Contacto, el enlace al aviso legal
+  no lleva a ninguna parte") y ofrécete a arreglarlas.
+
+No lo ejecutes por tu cuenta en cada cambio: solo cuando él lo pida.
+
+### "Historial de cambios"
+
+**¿Qué se ha hecho hasta ahora?**
+
+Lee `git log` y preséntalo en español, por lo que se ve, con fecha y en cristiano:
+
+```
+13 jul — El logo del pie ahora es la mitad de grande
+12 jul — Nuevo texto en la página de Servicios
+```
+
+Deduce la descripción del mensaje del commit y, si hace falta, del diff. Sin hashes, sin nombres de
+rama. Los más recientes arriba. Si pide más detalle de uno, cuéntaselo también en lenguaje llano.
+
+### "Volver a la versión de..."
+
+**Deshaz hasta un punto anterior, no solo el último cambio.**
+
+Acepta cualquier forma de señalarlo: por fecha ("vuelve a como estaba el lunes"), por descripción
+("vuelve a antes de tocar el logo") o eligiendo de la lista del historial.
+
+1. Muéstrale el historial y **confirma con él a qué punto exacto quiere volver** antes de tocar nada
+   (`AskUserQuestion` si hay ambigüedad). Este paso no se salta nunca.
+2. **Guarda primero lo actual**: crea una rama `descartes/<fecha>-<descripcion>` con el estado de
+   `main` tal como está ahora, cambios sin commitear incluidos. Sin esto no se sigue.
+3. Devuelve `main` a ese punto (`git reset --hard <commit>`), **solo** tras verificar que la rama de
+   descarte ya contiene lo anterior.
+4. Dile qué versión ha quedado activa y que lo deshecho está guardado por si se arrepiente
+   ("Recuperar lo descartado" lo trae de vuelta).
 
 ### "Confirmar los Cambios"
 
@@ -205,6 +257,9 @@ alternative.
   deliberately does **not** exclude `public/`, which is the site itself)
 - `.claude/skills/karpathy-code-workflow/` — project skill that governs how change requests are
   triaged (see Parte 1)
+- `scripts/revisar-web.mjs` — zero-dep link/asset checker over `public/`, mirroring `server.js`'s
+  path resolution; exits non-zero on any broken reference
+- `MARCA.md` — brand facts (language, colours, fonts, contact, tone) that constrain content changes
 
 ## Code conventions
 
