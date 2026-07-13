@@ -71,6 +71,9 @@ Nada de listas de archivos, hashes ni diffs salvo que los pida.
 Estas frases (o variantes evidentes, en cualquier capitalización) disparan un flujo completo.
 Ejecútalo sin pedir detalles técnicos ni proponer alternativas.
 
+`GUIA.md` es la versión de esto escrita **para él**: si cambias, añades o quitas una orden aquí,
+actualiza también `GUIA.md`, o dejará de decir la verdad.
+
 ### "¿Cómo está la web?"
 
 **Ponme al día, no recuerdo por dónde iba.** Resume en dos o tres frases:
