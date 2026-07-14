@@ -43,11 +43,16 @@ nuevas — implicaría cargar más recursos y romper la coherencia visual.
 
 ## Tono de los textos
 
-**Profesional y directo.** Frases cortas, sin florituras ni marketing hueco. Habla de obra, plazos,
-materiales y resultados. Nada de exclamaciones ni de promesas vagas.
+**Marketing directo, tipo landing de SEO.** Las páginas de servicio (`/services/*`) usan el
+contenido largo que el propietario aportó en `concretumoperis_textos_completos.docx` (julio 2026):
+titulares llamativos, listas de beneficios, sección de preguntas frecuentes y llamadas a la acción
+con el teléfono. Se permiten exclamaciones y frases más promocionales en esas páginas.
 
-- ✅ "Concrete foundations poured to spec, on schedule."
-- ❌ "We're passionate about creating amazing concrete experiences!"
+- ✅ "At CONCRETUM OPERIS, we specialize in providing professional Excavation Services..."
+- ✅ "Absolutely! We are proud to share testimonials and references from satisfied clients."
+
+El resto de la web (portada, Sobre nosotros, Contacto) mantiene el tono anterior, más sobrio, salvo
+que se pida lo contrario.
 
 ## Servicios (lo que vende la empresa)
 
