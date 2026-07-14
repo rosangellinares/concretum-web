@@ -23,6 +23,19 @@
         nav.nav-scrolled .logo-dark {
           display: inline-block;
         }
+        .nav-link {
+          display: inline-block;
+          border-bottom: 2px solid transparent;
+          padding-bottom: 4px;
+          transition: transform 0.2s ease, border-bottom-color 0.2s ease;
+        }
+        .nav-link:hover {
+          transform: scale(1.08);
+          border-bottom-color: #fff;
+        }
+        .nav-link.active {
+          border-bottom-color: #fff;
+        }
       </style>
       <link
         href="/img-logo.svg"
@@ -47,7 +60,7 @@
       />
       <title>About Concretum Operis | Richmond, CA Concrete Contractor</title>
       <meta
-        content="Over 25 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
+        content="Over 20 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
         name="description"
       />
 
@@ -3891,7 +3904,7 @@
         property="og:title"
       />
       <meta
-        content="Over 25 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
+        content="Over 20 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
         property="og:description"
       />
       <meta
@@ -3906,7 +3919,7 @@
         name="twitter:title"
       />
       <meta
-        content="Over 25 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
+        content="Over 20 years of specialty concrete and construction expertise in Richmond, CA. Licensed, bonded, and trusted for structural concrete, excavation and drilling work."
         name="twitter:description"
       />
       <meta
@@ -4034,34 +4047,34 @@
           >
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
               <div class="flex items-center justify-between h-20">
-                <a class="flex items-center gap-3 group" href="/"><img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto logo-light" /><img src="/img-logo-dark.svg" alt="Concretum Operis" class="h-10 w-auto logo-dark" /><div class="flex flex-col"><span class="font-heading font-bold text-lg tracking-tight leading-tight transition-colors text-white">CONCRETUM</span><span class="font-mono text-[10px] tracking-[0.3em] uppercase transition-colors text-white/70">Operis</span></div></a>
+                <a class="flex items-center gap-3 group" href="/"><img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto logo-light" /><img src="/img-logo-dark.svg" alt="Concretum Operis" class="h-10 w-auto logo-dark" /></a>
                 <div class="hidden lg:flex items-center gap-10">
                   <a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/"
                     >Home</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-[#D45500]"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link active"
                     href="/about"
                     >About</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/services"
                     >Services</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/projects"
                     >Projects</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/contact"
                     >Contact</a
                   >
                 </div>
                 <a
                   class="hidden lg:inline-flex items-center gap-2 bg-[#D45500] text-white px-6 py-3 text-sm font-semibold tracking-wide uppercase hover:bg-[#B84700] transition-colors"
-                  href="/contact"
-                  >Get a Quote</a
+                  href="https://wa.me/14157296060?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20concrete%20project."
+                   target="_blank" rel="noopener noreferrer">Get a Quote</a
                 ><button
                   id="mobile-menu-btn"
                   class="lg:hidden p-2 transition-colors text-white"
@@ -4091,29 +4104,29 @@
             >
               <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
                 <a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/"
                   >Home</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/about"
                   >About</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/services"
                   >Services</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/projects"
                   >Projects</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/contact"
                   >Contact</a
                 ><a
                   class="inline-flex items-center justify-center gap-2 bg-[#D45500] text-white px-6 py-3 text-sm font-semibold tracking-wide uppercase hover:bg-[#B84700] transition-colors"
-                  href="/contact"
-                  >Get a Quote</a
+                  href="https://wa.me/14157296060?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20concrete%20project."
+                   target="_blank" rel="noopener noreferrer">Get a Quote</a
                 >
               </div>
             </div>
@@ -4146,7 +4159,7 @@
                     <p
                       class="mt-4 text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed"
                     >
-                      Two decades of structural excellence in specialty concrete
+                      Over 20 years of structural excellence in specialty concrete
                       and heavy construction.
                     </p>
                   </div>
@@ -4168,7 +4181,7 @@
                       <h2
                         class="font-heading font-black text-3xl md:text-4xl text-[#121212] tracking-tight leading-[0.95] mb-8"
                       >
-                        From the Ground Up.<br />For Over 25 Years.
+                        From the Ground Up.<br />For Over 20 Years.
                       </h2>
                       <div
                         class="space-y-5 text-[#4A4A4A] text-lg leading-relaxed"
@@ -4225,19 +4238,17 @@
                       <div class="h-[1px] w-8 bg-[#D45500]"></div>
                       <span
                         class="font-mono text-xs tracking-[0.2em] text-[#4A4A4A] uppercase"
-                        >Our Approach</span
+                        >Our Values</span
                       >
                     </div>
                     <h2
                       class="font-heading font-black text-3xl md:text-4xl text-[#121212] tracking-tight leading-[0.95]"
                     >
-                      Built on Principles<br />That Don't Crack
+                      The Values<br />That Guide Us
                     </h2>
                     <p class="mt-6 text-[#4A4A4A] text-lg leading-relaxed">
-                      Our approach is straightforward: hire the best people, use
-                      the right equipment, follow the engineering specs, and never
-                      cut corners. These four principles guide every decision we
-                      make.
+                      These five values are non-negotiable. They shape how we
+                      bid, how we build, and how we treat everyone we work with.
                     </p>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -4265,11 +4276,12 @@
                           <h3
                             class="font-heading font-bold text-xl text-[#121212] mb-3"
                           >
-                            Structural Integrity
+                            Integrity
                           </h3>
                           <p class="text-[#4A4A4A] leading-relaxed">
-                            Every project is built to withstand decades of
-                            service. We engineer for permanence, not quick fixes.
+                            We do what we say. Every budget, schedule, and
+                            commitment is built on honesty — with our clients,
+                            our partners, and our team.
                           </p>
                         </div>
                       </div>
@@ -4298,11 +4310,12 @@
                           <h3
                             class="font-heading font-bold text-xl text-[#121212] mb-3"
                           >
-                            Safety Culture
+                            Craft Excellence
                           </h3>
                           <p class="text-[#4A4A4A] leading-relaxed">
-                            Zero-incident protocols, full OSHA compliance, and
-                            daily safety briefings on every active site.
+                            Precision isn't optional. From the first foundation
+                            pour to the final inspection, we hold every detail to
+                            the highest standard because the work has to last.
                           </p>
                         </div>
                       </div>
@@ -4331,11 +4344,12 @@
                           <h3
                             class="font-heading font-bold text-xl text-[#121212] mb-3"
                           >
-                            Technical Precision
+                            Accountability
                           </h3>
                           <p class="text-[#4A4A4A] leading-relaxed">
-                            We operate with engineering-grade tolerances, using
-                            calibrated equipment and verified processes.
+                            We own our results. When challenges arise, we face
+                            them head-on and take responsibility for delivering
+                            solutions, not excuses.
                           </p>
                         </div>
                       </div>
@@ -4364,11 +4378,46 @@
                           <h3
                             class="font-heading font-bold text-xl text-[#121212] mb-3"
                           >
-                            Client Partnership
+                            Sustainability
                           </h3>
                           <p class="text-[#4A4A4A] leading-relaxed">
-                            We work alongside your team from pre-construction
-                            through final inspection, not just during the pour.
+                            We build with the future in mind — reducing waste,
+                            choosing responsible materials, and making decisions
+                            that benefit our clients and the environment alike.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="border border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      style="opacity: 1; transform: none"
+                    >
+                      <div class="flex items-start gap-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-circle-check w-6 h-6 text-[#D45500] flex-shrink-0 mt-1"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <div>
+                          <h3
+                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                          >
+                            Trust
+                          </h3>
+                          <p class="text-[#4A4A4A] leading-relaxed">
+                            Relationships matter as much as structures. We earn
+                            trust project by project, through transparency,
+                            communication, and consistent follow-through.
                           </p>
                         </div>
                       </div>
@@ -4687,6 +4736,56 @@
                         competitive, well-planned solutions from the very start.
                       </p>
                     </div>
+                    <div class="group" style="opacity: 1; transform: none">
+                      <div
+                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                      >
+                        <div
+                          class="w-full h-full flex items-center justify-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                          >
+                            <path
+                              d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                            ></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                          </svg>
+                        </div>
+                      </div>
+                      <span
+                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        >Chief Financial Officer</span
+                      >
+                      <h3
+                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                      >
+                        Angel A. Ramirez
+                      </h3>
+                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                        Angel oversees the financial operations of Concretum
+                        Operis, bringing his expertise in financial management
+                        within the construction industry. He is responsible for
+                        budget planning, cash flow management, and maintaining
+                        strong relationships with banks and investors to support
+                        the company's growth. Angel also leads financial
+                        reporting and cost control on every project, ensuring
+                        each job stays on budget from start to finish. His
+                        analytical approach and attention to detail help
+                        Concretum Operis make sound financial decisions,
+                        upholding the transparency and reliability the company
+                        is known for.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -4697,7 +4796,7 @@
                       <div
                         class="font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
                       >
-                        25+
+                        20+
                       </div>
                       <div
                         class="mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
@@ -4760,8 +4859,8 @@
                   >
                     <a
                       class="inline-flex items-center gap-2 bg-[#D45500] text-white px-8 py-4 text-sm font-semibold tracking-wide uppercase hover:bg-[#B84700] transition-colors"
-                      href="/contact"
-                      >Request a Quote<svg
+                      href="https://wa.me/14157296060?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20concrete%20project."
+                       target="_blank" rel="noopener noreferrer">Request a Quote<svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -4776,9 +4875,9 @@
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path></svg></a
                     ><a
-                      href="tel:+14157296060"
+                      href="https://wa.me/14157296060"
                       class="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 text-sm font-semibold tracking-wide uppercase hover:border-white/40 transition-colors"
-                      >CALL (415) 729-6060</a
+                       target="_blank" rel="noopener noreferrer">CALL (415) 729-6060</a
                     >
                   </div>
                 </div>

@@ -3994,6 +3994,7 @@
             >
               <div class="flex items-center gap-3"><img src="/img-logo.svg" alt="Concretum Operis" class="h-9 w-auto" /><div class="flex flex-col"><span class="font-heading font-bold text-white text-sm tracking-tight leading-tight">CONCRETUM</span><span class="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase">Operis</span></div></div>
               <a
+                id="back-to-site"
                 class="inline-flex items-center gap-2 text-white/60 hover:text-white text-xs font-semibold tracking-wide uppercase transition-colors"
                 href="/"
                 ><svg
@@ -4265,6 +4266,17 @@
           ></div>
         </div>
       </div>
-
+      <script>
+        (function () {
+          var link = document.getElementById("back-to-site");
+          if (!link) return;
+          link.addEventListener("click", function (e) {
+            if (window.history.length > 1 && document.referrer.indexOf(window.location.origin) === 0) {
+              e.preventDefault();
+              window.history.back();
+            }
+          });
+        })();
+      </script>
     </body>
 </html>
