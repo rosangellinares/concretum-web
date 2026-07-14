@@ -4,6 +4,9 @@ services:
     image: concretum-web-modern
     ports:
       - "7779:7779"
+    env_file:
+      - path: .env
+        required: false
     restart: unless-stopped
     init: true
     logging:

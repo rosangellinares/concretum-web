@@ -23,6 +23,19 @@
         nav.nav-scrolled .logo-dark {
           display: inline-block;
         }
+        .nav-link {
+          display: inline-block;
+          border-bottom: 2px solid transparent;
+          padding-bottom: 4px;
+          transition: transform 0.2s ease, border-bottom-color 0.2s ease;
+        }
+        .nav-link:hover {
+          transform: scale(1.08);
+          border-bottom-color: #fff;
+        }
+        .nav-link.active {
+          border-bottom-color: #fff;
+        }
       </style>
       <link
         href="/img-logo.svg"
@@ -4069,34 +4082,34 @@
           >
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
               <div class="flex items-center justify-between h-20">
-                <a class="flex items-center gap-3 group" href="/"><img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto logo-light" /><img src="/img-logo-dark.svg" alt="Concretum Operis" class="h-10 w-auto logo-dark" /><div class="flex flex-col"><span class="font-heading font-bold text-lg tracking-tight leading-tight transition-colors text-white">CONCRETUM</span><span class="font-mono text-[10px] tracking-[0.3em] uppercase transition-colors text-white/70">Operis</span></div></a>
+                <a class="flex items-center gap-3 group" href="/"><img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto logo-light" /><img src="/img-logo-dark.svg" alt="Concretum Operis" class="h-10 w-auto logo-dark" /></a>
                 <div class="hidden lg:flex items-center gap-10">
                   <a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/"
                     >Home</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/about"
                     >About</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/services"
                     >Services</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-white/90"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link"
                     href="/projects"
                     >Projects</a
                   ><a
-                    class="text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D45500] text-[#D45500]"
+                    class="text-sm font-semibold tracking-wide uppercase transition-colors text-white nav-link active"
                     href="/contact"
                     >Contact</a
                   >
                 </div>
                 <a
                   class="hidden lg:inline-flex items-center gap-2 bg-[#D45500] text-white px-6 py-3 text-sm font-semibold tracking-wide uppercase hover:bg-[#B84700] transition-colors"
-                  href="/contact"
-                  >Get a Quote</a
+                  href="https://wa.me/14157296060?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20concrete%20project."
+                   target="_blank" rel="noopener noreferrer">Get a Quote</a
                 ><button
                   id="mobile-menu-btn"
                   class="lg:hidden p-2 transition-colors text-white"
@@ -4126,29 +4139,29 @@
             >
               <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
                 <a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/"
                   >Home</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/about"
                   >About</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/services"
                   >Services</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/projects"
                   >Projects</a
                 ><a
-                  class="text-sm font-medium tracking-wide uppercase text-white/90 hover:text-[#D45500] transition-colors"
+                  class="text-sm font-semibold tracking-wide uppercase text-white transition-colors"
                   href="/contact"
                   >Contact</a
                 ><a
                   class="inline-flex items-center justify-center gap-2 bg-[#D45500] text-white px-6 py-3 text-sm font-semibold tracking-wide uppercase hover:bg-[#B84700] transition-colors"
-                  href="/contact"
-                  >Get a Quote</a
+                  href="https://wa.me/14157296060?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20concrete%20project."
+                   target="_blank" rel="noopener noreferrer">Get a Quote</a
                 >
               </div>
             </div>
@@ -4208,8 +4221,9 @@
                         within one business day.
                       </p>
                       <form
+                        id="contact-form"
                         class="space-y-6"
-                        action="https://formspree.io/f/TU_FORM_ID_AQUI"
+                        action="https://formspree.io/f/meeyoerp"
                         method="POST"
                       >
                         <div
@@ -4335,6 +4349,25 @@
                           </button>
                         </div>
                       </form>
+                      <script>
+                        (function () {
+                          var form = document.getElementById("contact-form");
+                          if (!form) return;
+                          form.addEventListener("submit", function () {
+                            var data = new FormData(form);
+                            fetch("/api/notify-telegram", {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              keepalive: true,
+                              body: JSON.stringify({
+                                name: data.get("name") || "",
+                                contact: data.get("contact") || "",
+                                serviceType: data.get("serviceType") || "",
+                              }),
+                            }).catch(function () {});
+                          });
+                        })();
+                      </script>
                     </div>
                     <div class="lg:col-span-2">
                       <div class="sticky top-28 space-y-8">
