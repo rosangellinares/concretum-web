@@ -1,0 +1,66 @@
+/* Carrusel a pantalla completa para las galerías de proyectos: clic en una
+   miniatura la abre en grande, con flechas para pasar a la siguiente/anterior.
+   Progressive enhancement: sin JS, las fotos siguen siendo una rejilla normal. */
+
+[data-gallery] img {
+  cursor: pointer;
+}
+
+#co-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 18, 18, 0.92);
+}
+
+#co-lightbox.co-open {
+  display: flex;
+}
+
+#co-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+#co-lightbox button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+#co-lightbox .co-lightbox-close {
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 2rem;
+}
+
+#co-lightbox .co-lightbox-prev {
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+}
+
+#co-lightbox .co-lightbox-next {
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  #co-lightbox .co-lightbox-prev {
+    left: 1.5rem;
+  }
+  #co-lightbox .co-lightbox-next {
+    right: 1.5rem;
+  }
+}

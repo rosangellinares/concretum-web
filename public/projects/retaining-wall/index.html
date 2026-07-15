@@ -51,9 +51,9 @@
       <meta content="#121212" name="theme-color" />
       <meta content="Concretum Operis" name="author" />
       <meta content="US-CA" name="geo.region" />
-      <meta content="Richmond, CA" name="geo.placename" />
-      <meta content="37.9358;-122.3477" name="geo.position" />
-      <meta content="37.9358, -122.3477" name="ICBM" />
+      <meta content="Bonita, CA" name="geo.placename" />
+      <meta content="32.6636;-117.0033" name="geo.position" />
+      <meta content="32.6636, -117.0033" name="ICBM" />
       <link
         href="/solid-build-craft.base44.app/manifestbea53463.json"
         rel="manifest"
@@ -4037,7 +4037,9 @@
         href="/media.base44.com/images/public/6a3d334852375c5fa3456873/16591ee4c_heroproyectc83bcbca.png"
         fetchpriority="high"
       />
-    </head>
+        <link rel="stylesheet" href="/animations.css?v=3" />
+        <link rel="stylesheet" href="/gallery-lightbox.css" />
+  </head>
   <body>
       <div id="root">
         <div class="min-h-screen flex flex-col bg-[#F2F2F0]">
@@ -4148,27 +4150,27 @@
         >
           Residential Retaining Wall
         </h1>
-        <span class="text-[#4A4A4A] text-sm">Bay Area, CA</span>
+        <span class="text-[#4A4A4A] text-sm">Bonita, CA</span>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" data-gallery>
               <img
                 src="/media/projects/retaining-wall/01.jpg"
                 alt="Residential Retaining Wall — Concretum Operis project photo 1"
-                class="w-full h-auto object-cover"
+                class="w-full aspect-square object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="/media/projects/retaining-wall/02.jpg"
                 alt="Residential Retaining Wall — Concretum Operis project photo 2"
-                class="w-full h-auto object-cover"
+                class="w-full aspect-square object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src="/media/projects/retaining-wall/03.jpg"
                 alt="Residential Retaining Wall — Concretum Operis project photo 3"
-                class="w-full h-auto object-cover"
+                class="w-full aspect-square object-cover"
                 loading="lazy"
                 decoding="async"
               />
@@ -4184,15 +4186,6 @@
                 <div class="lg:col-span-1">
                   <div class="flex items-center gap-3 mb-6">
                     <img src="/img-logo.svg" alt="Concretum Operis" class="h-10 w-auto" />
-                    <div class="flex flex-col">
-                      <span
-                        class="font-heading font-bold text-white text-lg tracking-tight leading-tight"
-                        >CONCRETUM</span
-                      ><span
-                        class="font-mono text-[10px] tracking-[0.3em] text-white/50 uppercase"
-                        >Operis</span
-                      >
-                    </div>
                   </div>
                   <p class="text-white/50 text-sm leading-relaxed max-w-xs">
                     Built for permanence. Specialty concrete and construction
@@ -4531,5 +4524,13 @@
           nav.classList.add("nav-scrolled");
         })();
       </script>
-    </body>
+        <script src="/animations.js?v=3" defer></script>
+      <div id="co-lightbox">
+        <button class="co-lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="co-lightbox-prev" aria-label="Anterior">&#8249;</button>
+        <img src="" alt="" />
+        <button class="co-lightbox-next" aria-label="Siguiente">&#8250;</button>
+      </div>
+      <script src="/gallery-lightbox.js" defer></script>
+  </body>
 </html>
