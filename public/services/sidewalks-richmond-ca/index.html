@@ -4170,6 +4170,7 @@
                   <a
                     class="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold tracking-wide uppercase transition-colors mb-6"
                     href="/services"
+                    onclick="if(document.referrer===location.origin+'/services'){event.preventDefault();history.back()}"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
