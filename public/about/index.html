@@ -3965,6 +3965,121 @@
             transform: scale(1);
           }
         }
+        @media (max-width: 767px) {
+          .footer-grid {
+            grid-template-columns: 1.6fr 0.4fr !important;
+            column-gap: 1rem !important;
+            row-gap: 1.5rem !important;
+          }
+          .footer-nav {
+            margin-left: 0.5rem;
+          }
+          .footer-nav-list svg {
+            display: none;
+          }
+          .values-grid {
+            column-gap: 0.75rem !important;
+            row-gap: 0.75rem !important;
+          }
+          .value-card {
+            padding: 0.75rem !important;
+          }
+          .value-inner {
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+          }
+          .value-inner svg {
+            width: 1.1rem !important;
+            height: 1.1rem !important;
+            margin-top: 0 !important;
+          }
+          .value-desc {
+            font-size: 0.85rem !important;
+            line-height: 1.4 !important;
+          }
+          .compact-title {
+            font-size: 1.05rem !important;
+            margin-bottom: 0.35rem !important;
+            line-height: 1.25 !important;
+          }
+          .mv-grid {
+            display: block !important;
+            position: relative;
+            aspect-ratio: 1 / 1.56;
+            height: auto;
+          }
+          .mv-card {
+            padding: 1rem !important;
+            position: absolute;
+            width: 78%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+          }
+          .mv-grid .mv-card:nth-of-type(1) {
+            top: 0;
+            left: 0;
+          }
+          .mv-grid .mv-card:nth-of-type(2) {
+            top: 50%;
+            left: 20%;
+          }
+          .mv-icon-box {
+            width: 2rem !important;
+            height: 2rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .mv-icon-box svg {
+            width: 1rem !important;
+            height: 1rem !important;
+          }
+          .mv-badge {
+            font-size: 0.7rem !important;
+            letter-spacing: 0.08em !important;
+            margin-bottom: 0.35rem !important;
+          }
+          .mv-title {
+            font-size: 1.15rem !important;
+            margin-bottom: 0.4rem !important;
+            line-height: 1.3 !important;
+          }
+          .mv-desc {
+            font-size: 0.78rem !important;
+            line-height: 1.35 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 9;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .team-grid {
+            gap: 0.75rem !important;
+          }
+          .team-icon {
+            width: 2rem !important;
+            height: 2rem !important;
+          }
+          .team-badge {
+            font-size: 0.7rem !important;
+            letter-spacing: 0.05em !important;
+          }
+          .team-desc {
+            font-size: 0.8rem !important;
+            line-height: 1.4 !important;
+          }
+          .about-stats-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            column-gap: 0.5rem !important;
+          }
+          .about-stat-value {
+            font-size: 1.4rem !important;
+          }
+          .about-stat-label {
+            font-size: 8px !important;
+            letter-spacing: 0.05em !important;
+          }
+        }
       </style>
       <meta
         name="keywords"
@@ -4214,12 +4329,12 @@
                       bid, how we build, and how we treat everyone we work with.
                     </p>
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="values-grid grid grid-cols-2 gap-8">
                     <div
-                      class="border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      class="value-card border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
                       style="opacity: 1; transform: none"
                     >
-                      <div class="flex items-start gap-4">
+                      <div class="value-inner flex items-start gap-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -4237,11 +4352,11 @@
                         </svg>
                         <div>
                           <h3
-                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                            class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                           >
                             Integrity
                           </h3>
-                          <p class="text-[#4A4A4A] leading-relaxed">
+                          <p class="value-desc text-[#4A4A4A] leading-relaxed">
                             We do what we say. Every budget, schedule, and
                             commitment is built on honesty — with our clients,
                             our partners, and our team.
@@ -4250,10 +4365,10 @@
                       </div>
                     </div>
                     <div
-                      class="border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      class="value-card border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
                       style="opacity: 1; transform: none"
                     >
-                      <div class="flex items-start gap-4">
+                      <div class="value-inner flex items-start gap-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -4271,11 +4386,11 @@
                         </svg>
                         <div>
                           <h3
-                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                            class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                           >
                             Craft Excellence
                           </h3>
-                          <p class="text-[#4A4A4A] leading-relaxed">
+                          <p class="value-desc text-[#4A4A4A] leading-relaxed">
                             Precision isn't optional. From the first foundation
                             pour to the final inspection, we hold every detail to
                             the highest standard because the work has to last.
@@ -4284,10 +4399,10 @@
                       </div>
                     </div>
                     <div
-                      class="border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      class="value-card border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
                       style="opacity: 1; transform: none"
                     >
-                      <div class="flex items-start gap-4">
+                      <div class="value-inner flex items-start gap-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -4305,11 +4420,11 @@
                         </svg>
                         <div>
                           <h3
-                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                            class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                           >
                             Accountability
                           </h3>
-                          <p class="text-[#4A4A4A] leading-relaxed">
+                          <p class="value-desc text-[#4A4A4A] leading-relaxed">
                             We own our results. When challenges arise, we face
                             them head-on and take responsibility for delivering
                             solutions, not excuses.
@@ -4318,10 +4433,10 @@
                       </div>
                     </div>
                     <div
-                      class="border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      class="value-card border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
                       style="opacity: 1; transform: none"
                     >
-                      <div class="flex items-start gap-4">
+                      <div class="value-inner flex items-start gap-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -4339,11 +4454,11 @@
                         </svg>
                         <div>
                           <h3
-                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                            class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                           >
                             Sustainability
                           </h3>
-                          <p class="text-[#4A4A4A] leading-relaxed">
+                          <p class="value-desc text-[#4A4A4A] leading-relaxed">
                             We build with the future in mind — reducing waste,
                             choosing responsible materials, and making decisions
                             that benefit our clients and the environment alike.
@@ -4352,10 +4467,10 @@
                       </div>
                     </div>
                     <div
-                      class="border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
+                      class="value-card border-2 border-[#121212]/10 p-8 lg:p-10 hover:border-[#D45500]/40 transition-colors"
                       style="opacity: 1; transform: none"
                     >
-                      <div class="flex items-start gap-4">
+                      <div class="value-inner flex items-start gap-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -4373,11 +4488,11 @@
                         </svg>
                         <div>
                           <h3
-                            class="font-heading font-bold text-xl text-[#121212] mb-3"
+                            class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                           >
                             Trust
                           </h3>
-                          <p class="text-[#4A4A4A] leading-relaxed">
+                          <p class="value-desc text-[#4A4A4A] leading-relaxed">
                             Relationships matter as much as structures. We earn
                             trust project by project, through transparency,
                             communication, and consistent follow-through.
@@ -4404,13 +4519,13 @@
                       What Drives Us<br />Forward
                     </h2>
                   </div>
-                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div class="mv-grid grid grid-cols-2 lg:grid-cols-2 gap-8">
                     <div
-                      class="bg-white p-10 lg:p-14 border-t-4 border-[#D45500]"
+                      class="mv-card bg-white p-10 lg:p-14 border-t-4 border-[#D45500]"
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="w-14 h-14 bg-[#121212] flex items-center justify-center mb-8"
+                        class="mv-icon-box w-14 h-14 bg-[#121212] flex items-center justify-center mb-8"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4430,16 +4545,16 @@
                         </svg>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.3em] text-[#D45500] uppercase block mb-4"
+                        class="mv-badge font-mono text-xs tracking-[0.3em] text-[#D45500] uppercase block mb-4"
                         >Our Mission</span
                       >
                       <h3
-                        class="font-heading font-bold text-2xl text-[#121212] mb-6 leading-tight"
+                        class="mv-title font-heading font-bold text-2xl text-[#121212] mb-6 leading-tight"
                       >
                         Build structures that endure — and relationships that
                         last.
                       </h3>
-                      <p class="text-[#4A4A4A] text-lg leading-relaxed">
+                      <p class="mv-desc text-[#4A4A4A] text-lg leading-relaxed">
                         Combining technical expertise with a client-centered
                         approach, ensuring every project reflects durability,
                         precision, and excellence. From custom foundations to
@@ -4449,11 +4564,11 @@
                       </p>
                     </div>
                     <div
-                      class="bg-[#121212] p-10 lg:p-14"
+                      class="mv-card bg-[#121212] p-10 lg:p-14"
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="w-14 h-14 bg-[#D45500] flex items-center justify-center mb-8"
+                        class="mv-icon-box w-14 h-14 bg-[#D45500] flex items-center justify-center mb-8"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -4474,16 +4589,16 @@
                         </svg>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.3em] text-[#D45500] uppercase block mb-4"
+                        class="mv-badge font-mono text-xs tracking-[0.3em] text-[#D45500] uppercase block mb-4"
                         >Our Vision</span
                       >
                       <h3
-                        class="font-heading font-bold text-2xl text-white mb-6 leading-tight"
+                        class="mv-title font-heading font-bold text-2xl text-white mb-6 leading-tight"
                       >
                         To be Richmond's most trusted name in structural
                         concrete.
                       </h3>
-                      <p class="text-white/60 text-lg leading-relaxed">
+                      <p class="mv-desc text-white/60 text-lg leading-relaxed">
                         To be industry leaders in California's construction
                         sector, driving the integration of sustainable practices
                         into every project. From waste reduction to the use of
@@ -4518,11 +4633,11 @@
                     </p>
                   </div>
                   <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                    class="team-grid grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
                   >
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                        class="team-photo relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
                       >
                         <div
                           class="w-full h-full flex items-center justify-center"
@@ -4537,7 +4652,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                            class="team-icon lucide lucide-user w-16 h-16 text-[#121212]/20"
                           >
                             <path
                               d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
@@ -4547,15 +4662,15 @@
                         </div>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        class="team-badge font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
                         >Funder &amp; CEO</span
                       >
                       <h3
-                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                        class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                       >
                         Roberto González
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="team-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Roberto is the founder of Concretum Operis and the driving
                         force behind over 20 years of work in construction. He
                         started from the ground up at 17 as a field worker,
@@ -4567,7 +4682,7 @@
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                        class="team-photo relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
                       >
                         <div
                           class="w-full h-full flex items-center justify-center"
@@ -4582,7 +4697,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                            class="team-icon lucide lucide-user w-16 h-16 text-[#121212]/20"
                           >
                             <path
                               d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
@@ -4592,15 +4707,15 @@
                         </div>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        class="team-badge font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
                         >Executive
                       </span>
                       <h3
-                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                        class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                       >
                         Tanya Fernández
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="team-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Tania is a key member of the Concretum Operis
                         administrative team. She is responsible for providing
                         executive support, attending to clients, and coordinating
@@ -4612,7 +4727,7 @@
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                        class="team-photo relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
                       >
                         <div
                           class="w-full h-full flex items-center justify-center"
@@ -4627,7 +4742,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                            class="team-icon lucide lucide-user w-16 h-16 text-[#121212]/20"
                           >
                             <path
                               d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
@@ -4637,15 +4752,15 @@
                         </div>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        class="team-badge font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
                         >Project Manager</span
                       >
                       <h3
-                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                        class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                       >
                         Joel Gallegos
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="team-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Joel ensures that every project is executed from start to
                         finish without issues. As Project Manager, he coordinates
                         directly with clients, contractors, and engineers,
@@ -4657,7 +4772,7 @@
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                        class="team-photo relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
                       >
                         <div
                           class="w-full h-full flex items-center justify-center"
@@ -4672,7 +4787,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                            class="team-icon lucide lucide-user w-16 h-16 text-[#121212]/20"
                           >
                             <path
                               d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
@@ -4682,15 +4797,15 @@
                         </div>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        class="team-badge font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
                         >Estimating Department Manager</span
                       >
                       <h3
-                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                        class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                       >
                         Reinier González
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="team-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Reinier leads the estimating department at Concretum
                         Operis. He is responsible for preparing detailed budgets,
                         analyzing blueprints, and ensuring that every proposal
@@ -4701,7 +4816,7 @@
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
+                        class="team-photo relative aspect-[3/4] bg-[#F2F2F0] overflow-hidden mb-5"
                       >
                         <div
                           class="w-full h-full flex items-center justify-center"
@@ -4716,7 +4831,7 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="lucide lucide-user w-16 h-16 text-[#121212]/20"
+                            class="team-icon lucide lucide-user w-16 h-16 text-[#121212]/20"
                           >
                             <path
                               d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
@@ -4726,15 +4841,15 @@
                         </div>
                       </div>
                       <span
-                        class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
+                        class="team-badge font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase block mb-2"
                         >Chief Financial Officer</span
                       >
                       <h3
-                        class="font-heading font-bold text-xl text-[#121212] mb-3"
+                        class="compact-title font-heading font-bold text-xl text-[#121212] mb-3"
                       >
                         Angel A. Ramirez
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="team-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Angel oversees the financial operations of Concretum
                         Operis, bringing his expertise in financial management
                         within the construction industry. He is responsible for
@@ -4754,51 +4869,51 @@
               </section>
               <section class="py-24 lg:py-32 bg-[#121212]">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                  <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
+                  <div class="about-stats-grid grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
                     <div class="text-center" style="opacity: 1; transform: none">
                       <div
-                        class="font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
+                        class="about-stat-value font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
                       >
                         20+
                       </div>
                       <div
-                        class="mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
+                        class="about-stat-label mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
                       >
                         Years Operating
                       </div>
                     </div>
                     <div class="text-center" style="opacity: 1; transform: none">
                       <div
-                        class="font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
+                        class="about-stat-value font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
                       >
                         1,200+
                       </div>
                       <div
-                        class="mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
+                        class="about-stat-label mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
                       >
                         Projects Delivered
                       </div>
                     </div>
                     <div class="text-center" style="opacity: 1; transform: none">
                       <div
-                        class="font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
+                        class="about-stat-value font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
                       >
                         500K+
                       </div>
                       <div
-                        class="mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
+                        class="about-stat-label mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
                       >
                         Cubic Yards Poured
                       </div>
                     </div>
                     <div class="text-center" style="opacity: 1; transform: none">
                       <div
-                        class="font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
+                        class="about-stat-value font-heading font-black text-4xl lg:text-5xl text-[#D45500]"
                       >
                         98%
                       </div>
                       <div
-                        class="mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
+                        class="about-stat-label mt-3 font-mono text-xs tracking-[0.2em] text-white/40 uppercase"
                       >
                         Client Retention
                       </div>
@@ -4851,7 +4966,7 @@
             <div class="h-[2px] bg-[#D45500]"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12">
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
+                class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
               >
                 <div class="lg:col-span-1">
                   <div class="flex flex-col items-start gap-1 mb-6">
@@ -4864,13 +4979,13 @@
                     industrial, and infrastructure projects.
                   </p>
                 </div>
-                <div>
+                <div class="footer-nav">
                   <h4
                     class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase mb-6"
                   >
                     Navigation
                   </h4>
-                  <ul class="space-y-3">
+                  <ul class="footer-nav-list space-y-3">
                     <li>
                       <a
                         class="text-white/60 hover:text-white text-sm transition-colors flex items-center gap-1 group"

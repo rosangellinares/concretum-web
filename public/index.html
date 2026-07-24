@@ -3985,6 +3985,125 @@
           .hero-slide:nth-of-type(5) img {
             object-position: 45% center;
           }
+          .stats-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+          }
+          .stats-grid .stat-value {
+            font-size: 1.375rem;
+          }
+          .stats-grid .stat-label {
+            font-size: 10px;
+            letter-spacing: normal;
+          }
+          .svc-card {
+            aspect-ratio: 3 / 4 !important;
+          }
+          .svc-panel {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-end !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            padding: 1rem !important;
+          }
+          .svc-badge {
+            order: 1;
+            font-size: 10px !important;
+            letter-spacing: 0.03em !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+          }
+          .svc-learnmore {
+            order: 2;
+            opacity: 1 !important;
+            transform: none !important;
+            margin-top: 0.25rem !important;
+            font-size: 0.75rem !important;
+          }
+          .svc-title {
+            order: 3;
+            font-size: 1.05rem !important;
+            line-height: 1.25 !important;
+            margin-bottom: 0;
+          }
+          .svc-desc {
+            display: none;
+          }
+          .proj-card {
+            aspect-ratio: 3 / 4 !important;
+          }
+          .proj-panel {
+            padding: 1rem !important;
+          }
+          .proj-badge {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            font-size: 10px !important;
+            letter-spacing: 0.03em !important;
+            margin-bottom: 0.25rem !important;
+          }
+          .proj-title {
+            font-size: 1.05rem !important;
+            line-height: 1.25 !important;
+          }
+          .proj-card:nth-of-type(1) img {
+            object-position: center 75% !important;
+          }
+          .proj-card:nth-of-type(2) img {
+            object-position: center 65% !important;
+          }
+          .proj-card:nth-of-type(3) img {
+            object-position: center 70% !important;
+          }
+          .proj-card:nth-of-type(4) img {
+            object-position: center 55% !important;
+          }
+          .why-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            column-gap: 0.5rem !important;
+            row-gap: 1.25rem !important;
+          }
+          .why-icon-box {
+            width: 2.25rem !important;
+            height: 2.25rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .why-icon-box svg {
+            width: 1rem !important;
+            height: 1rem !important;
+          }
+          .why-title {
+            font-size: 0.85rem !important;
+            line-height: 1.25 !important;
+            margin-bottom: 0.25rem !important;
+          }
+          .why-desc {
+            font-size: 0.75rem !important;
+            line-height: 1.35 !important;
+          }
+          .hero-badge {
+            font-size: 0.75rem !important;
+            letter-spacing: 0.1em !important;
+          }
+          .about-stat-num {
+            font-size: 2rem !important;
+          }
+          .footer-grid {
+            grid-template-columns: 1.6fr 0.4fr !important;
+            column-gap: 1rem !important;
+            row-gap: 1.5rem !important;
+          }
+          .footer-nav {
+            margin-left: 0.5rem;
+          }
+          .footer-nav-list svg {
+            display: none;
+          }
         }
       </style>
       <meta
@@ -4260,7 +4379,7 @@
                     <div class="flex items-center gap-3 mb-8">
                       <div class="h-[2px] w-12 bg-[#D45500]"></div>
                       <span
-                        class="font-mono text-sm tracking-[0.3em] uppercase text-[hsl(var(--primary))]"
+                        class="hero-badge font-mono text-sm tracking-[0.3em] uppercase text-[hsl(var(--primary))]"
                         >Specialty Concrete &amp; Construction</span
                       >
                     </div>
@@ -4352,18 +4471,18 @@
               </section>
               <section class="bg-[#121212] border-t border-white/10">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                  <div class="grid grid-cols-2 lg:grid-cols-4">
+                  <div class="stats-grid grid grid-cols-2 lg:grid-cols-4">
                     <div
                       class="py-10 lg:py-12 text-center border-b lg:border-b-0 border-r border-white/5 last:border-r-0"
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
+                        class="stat-value font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
                       >
                         500K+
                       </div>
                       <div
-                        class="mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
+                        class="stat-label mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
                       >
                         Cubic Yards Poured
                       </div>
@@ -4373,12 +4492,12 @@
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
+                        class="stat-value font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
                       >
                         20+
                       </div>
                       <div
-                        class="mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
+                        class="stat-label mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
                       >
                         Years of Integrity
                       </div>
@@ -4388,12 +4507,12 @@
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
+                        class="stat-value font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
                       >
                         1,200+
                       </div>
                       <div
-                        class="mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
+                        class="stat-label mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
                       >
                         Projects Completed
                       </div>
@@ -4403,12 +4522,12 @@
                       style="opacity: 1; transform: none"
                     >
                       <div
-                        class="font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
+                        class="stat-value font-heading font-black text-3xl lg:text-4xl text-[#D45500] tracking-tight"
                       >
                         100%
                       </div>
                       <div
-                        class="mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
+                        class="stat-label mt-2 font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase"
                       >
                         Safety Record
                       </div>
@@ -4457,9 +4576,9 @@
                         <path d="m12 5 7 7-7 7"></path></svg
                     ></a>
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 gap-4">
                     <div
-                      class="group relative overflow-hidden aspect-[4/3] cursor-pointer"
+                      class="svc-card group relative overflow-hidden aspect-[4/3] cursor-pointer"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/services/excavation-richmond-ca"
@@ -4476,26 +4595,26 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/40 to-transparent"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="svc-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider mb-2"
+                            class="svc-badge font-mono text-xs text-[#D45500] tracking-wider mb-2"
                             >01</span
                           >
                           <h3
-                            class="font-heading font-bold text-2xl text-white mb-2"
+                            class="svc-title font-heading font-bold text-2xl text-white mb-2"
                           >
                             Excavation
                           </h3>
                           <p
-                            class="text-white/60 text-sm leading-relaxed max-w-sm"
+                            class="svc-desc text-white/60 text-sm leading-relaxed max-w-sm"
                           >
                             Precision excavation in any soil type with depths to 6
                             meters, slope control, and shoring — serving Richmond,
                             CA.
                           </p>
                           <div
-                            class="mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
+                            class="svc-learnmore mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
                           >
                             Learn More
                             <svg
@@ -4517,7 +4636,7 @@
                       ></a>
                     </div>
                     <div
-                      class="group relative overflow-hidden aspect-[4/3] cursor-pointer"
+                      class="svc-card group relative overflow-hidden aspect-[4/3] cursor-pointer"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/services/concrete-richmond-ca"
@@ -4534,26 +4653,26 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/40 to-transparent"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="svc-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider mb-2"
+                            class="svc-badge font-mono text-xs text-[#D45500] tracking-wider mb-2"
                             >02</span
                           >
                           <h3
-                            class="font-heading font-bold text-2xl text-white mb-2"
+                            class="svc-title font-heading font-bold text-2xl text-white mb-2"
                           >
                             Concrete Pouring
                           </h3>
                           <p
-                            class="text-white/60 text-sm leading-relaxed max-w-sm"
+                            class="svc-desc text-white/60 text-sm leading-relaxed max-w-sm"
                           >
                             Structural concrete pours for slabs, columns, beams,
                             and walls — from f'c 3,000 to 6,000 PSI per ACI
                             standards.
                           </p>
                           <div
-                            class="mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
+                            class="svc-learnmore mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
                           >
                             Learn More
                             <svg
@@ -4575,7 +4694,7 @@
                       ></a>
                     </div>
                     <div
-                      class="group relative overflow-hidden aspect-[4/3] cursor-pointer"
+                      class="svc-card group relative overflow-hidden aspect-[4/3] cursor-pointer"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/services/drilling-richmond-ca"
@@ -4592,26 +4711,26 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/40 to-transparent"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="svc-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider mb-2"
+                            class="svc-badge font-mono text-xs text-[#D45500] tracking-wider mb-2"
                             >03</span
                           >
                           <h3
-                            class="font-heading font-bold text-2xl text-white mb-2"
+                            class="svc-title font-heading font-bold text-2xl text-white mb-2"
                           >
                             Drilling
                           </h3>
                           <p
-                            class="text-white/60 text-sm leading-relaxed max-w-sm"
+                            class="svc-desc text-white/60 text-sm leading-relaxed max-w-sm"
                           >
                             Diamond core drilling from ½" to 24" in concrete,
                             rock, and masonry — clean, precise, vibration-free
                             cuts.
                           </p>
                           <div
-                            class="mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
+                            class="svc-learnmore mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
                           >
                             Learn More
                             <svg
@@ -4633,7 +4752,7 @@
                       ></a>
                     </div>
                     <div
-                      class="group relative overflow-hidden aspect-[4/3] cursor-pointer"
+                      class="svc-card group relative overflow-hidden aspect-[4/3] cursor-pointer"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/services"
@@ -4650,26 +4769,26 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/40 to-transparent"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="svc-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider mb-2"
+                            class="svc-badge font-mono text-xs text-[#D45500] tracking-wider mb-2"
                             >04</span
                           >
                           <h3
-                            class="font-heading font-bold text-2xl text-white mb-2"
+                            class="svc-title font-heading font-bold text-2xl text-white mb-2"
                           >
                             Shotcrete
                           </h3>
                           <p
-                            class="text-white/60 text-sm leading-relaxed max-w-sm"
+                            class="svc-desc text-white/60 text-sm leading-relaxed max-w-sm"
                           >
                             Wet and dry mix shotcrete for slope stabilization,
                             retaining walls, and structural reinforcement with
                             high strength.
                           </p>
                           <div
-                            class="mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
+                            class="svc-learnmore mt-4 flex items-center gap-2 text-[#D45500] text-sm font-semibold uppercase tracking-wide opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all"
                           >
                             Learn More
                             <svg
@@ -4728,7 +4847,7 @@
                       <div class="mt-10 grid grid-cols-2 gap-8">
                         <div>
                           <div
-                            class="font-heading font-black text-4xl text-[#D45500]"
+                            class="about-stat-num font-heading font-black text-4xl text-[#D45500]"
                           >
                             20+
                           </div>
@@ -4740,7 +4859,7 @@
                         </div>
                         <div>
                           <div
-                            class="font-heading font-black text-4xl text-[#D45500]"
+                            class="about-stat-num font-heading font-black text-4xl text-[#D45500]"
                           >
                             1,200+
                           </div>
@@ -4855,9 +4974,9 @@
                         <path d="m12 5 7 7-7 7"></path></svg
                     ></a>
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="grid grid-cols-2 gap-4">
                     <div
-                      class="group relative overflow-hidden cursor-pointer aspect-[4/3]"
+                      class="proj-card group relative overflow-hidden cursor-pointer aspect-[4/3]"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/projects"
@@ -4875,14 +4994,14 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="proj-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
+                            class="proj-badge font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
                             >Architectural Concrete</span
                           >
                           <h3
-                            class="font-heading font-bold text-xl md:text-2xl text-white"
+                            class="proj-title font-heading font-bold text-xl md:text-2xl text-white"
                           >
                             Rooftop Concrete Terrace
                           </h3>
@@ -4890,7 +5009,7 @@
                       >
                     </div>
                     <div
-                      class="group relative overflow-hidden cursor-pointer aspect-[4/3]"
+                      class="proj-card group relative overflow-hidden cursor-pointer aspect-[4/3]"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/projects"
@@ -4908,14 +5027,14 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="proj-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
+                            class="proj-badge font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
                             >Concrete Finishing</span
                           >
                           <h3
-                            class="font-heading font-bold text-xl md:text-2xl text-white"
+                            class="proj-title font-heading font-bold text-xl md:text-2xl text-white"
                           >
                             Concrete Facade &amp; Driveway
                           </h3>
@@ -4923,7 +5042,7 @@
                       >
                     </div>
                     <div
-                      class="group relative overflow-hidden cursor-pointer aspect-[4/3]"
+                      class="proj-card group relative overflow-hidden cursor-pointer aspect-[4/3]"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/projects"
@@ -4941,14 +5060,14 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="proj-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
+                            class="proj-badge font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
                             >Excavation &amp; Grading</span
                           >
                           <h3
-                            class="font-heading font-bold text-xl md:text-2xl text-white"
+                            class="proj-title font-heading font-bold text-xl md:text-2xl text-white"
                           >
                             Residential Retaining Wall
                           </h3>
@@ -4956,7 +5075,7 @@
                       >
                     </div>
                     <div
-                      class="group relative overflow-hidden cursor-pointer aspect-[4/3]"
+                      class="proj-card group relative overflow-hidden cursor-pointer aspect-[4/3]"
                       style="opacity: 1; transform: none"
                     >
                       <a href="/projects"
@@ -4974,14 +5093,14 @@
                           class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"
                         ></div>
                         <div
-                          class="absolute inset-0 p-8 flex flex-col justify-end"
+                          class="proj-panel absolute inset-0 p-8 flex flex-col justify-end"
                         >
                           <span
-                            class="font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
+                            class="proj-badge font-mono text-xs text-[#D45500] tracking-wider uppercase mb-2"
                             >Concrete Pouring</span
                           >
                           <h3
-                            class="font-heading font-bold text-xl md:text-2xl text-white"
+                            class="proj-title font-heading font-bold text-xl md:text-2xl text-white"
                           >
                             Commercial Sidewalk
                           </h3>
@@ -5017,11 +5136,11 @@
                     </p>
                   </div>
                   <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+                    class="why-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
                   >
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5041,18 +5160,18 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         Safety First
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Full OSHA compliance and zero-incident track record across
                         all active sites.
                       </p>
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5072,18 +5191,18 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         Precision Engineering
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Tight-tolerance work delivered with engineering-grade
                         accuracy, every pour.
                       </p>
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5106,18 +5225,18 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         Experienced Crews
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Seasoned operators and project managers with decades of
                         field experience.
                       </p>
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5138,18 +5257,18 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         Licensed &amp; Bonded
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Full licensing, bonding, and insurance for projects of any
                         scale.
                       </p>
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5168,18 +5287,18 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         On-Time Delivery
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Reliable scheduling and milestone tracking to keep your
                         project on track.
                       </p>
                     </div>
                     <div class="group" style="opacity: 1; transform: none">
                       <div
-                        class="w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
+                        class="why-icon-box w-14 h-14 bg-[#F2F2F0] flex items-center justify-center mb-5 group-hover:bg-[#D45500] transition-colors"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -5205,11 +5324,11 @@
                         </svg>
                       </div>
                       <h3
-                        class="font-heading font-bold text-lg text-[#121212] mb-2"
+                        class="why-title font-heading font-bold text-lg text-[#121212] mb-2"
                       >
                         Heavy Equipment Fleet
                       </h3>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed">
+                      <p class="why-desc text-[#4A4A4A] text-sm leading-relaxed">
                         Fully maintained heavy machinery fleet ready for any
                         construction demand.
                       </p>
@@ -5262,7 +5381,7 @@
             <div class="h-[2px] bg-[#D45500]"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12">
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
+                class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
               >
                 <div class="lg:col-span-1">
                   <div class="flex flex-col items-start gap-1 mb-6">
@@ -5275,13 +5394,13 @@
                     industrial, and infrastructure projects.
                   </p>
                 </div>
-                <div>
+                <div class="footer-nav">
                   <h4
                     class="font-mono text-xs tracking-[0.2em] text-[#D45500] uppercase mb-6"
                   >
                     Navigation
                   </h4>
-                  <ul class="space-y-3">
+                  <ul class="footer-nav-list space-y-3">
                     <li>
                       <a
                         class="text-white/60 hover:text-white text-sm transition-colors flex items-center gap-1 group"
