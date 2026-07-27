@@ -4025,6 +4025,7 @@
         fetchpriority="high"
       />
         <link rel="stylesheet" href="/animations.css?v=3" />
+        <link rel="stylesheet" href="/gallery-lightbox.css" />
   </head>
   <body>
       <div id="root">
@@ -4339,7 +4340,7 @@
                       >From the Field</span
                     >
                   </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-gallery>
                     <img
                       src="/media/services/concrete-pumping-richmond-ca/01.jpg"
                       alt="Crew guiding a concrete pump bucket lowered by crane atop a high-rise in Richmond, CA"
@@ -4774,5 +4775,12 @@
         })();
       </script>
         <script src="/animations.js?v=3" defer></script>
+      <div id="co-lightbox">
+        <button class="co-lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="co-lightbox-prev" aria-label="Anterior">&#8249;</button>
+        <img src="" alt="" />
+        <button class="co-lightbox-next" aria-label="Siguiente">&#8250;</button>
+      </div>
+      <script src="/gallery-lightbox.js" defer></script>
   </body>
 </html>
