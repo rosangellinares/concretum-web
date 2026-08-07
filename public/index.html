@@ -39,6 +39,34 @@
         .nav-link.active {
           border-bottom-color: #fff;
         }
+        .reviews-stack {
+          display: grid;
+        }
+        .reviews-slide {
+          grid-area: 1 / 1;
+          transition: opacity 0.5s ease-in-out;
+        }
+        .reviews-arrow {
+          color: #4a4a4a;
+          transition: color 0.2s ease;
+        }
+        .reviews-arrow:hover {
+          color: #d45500;
+        }
+        .reviews-dot-bar {
+          display: block;
+          height: 3px;
+          width: 24px;
+          background: rgba(74, 74, 74, 0.25);
+          transition: all 0.3s ease;
+        }
+        .reviews-dot-bar:hover {
+          background: rgba(74, 74, 74, 0.5);
+        }
+        .reviews-dot-bar.active {
+          width: 40px;
+          background: #d45500;
+        }
       </style>
       <link
         href="/img-logo.svg"
@@ -5134,59 +5162,88 @@
                       available.
                     </p>
                   </div>
-                  <div
-                    class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12"
-                  >
-                    <div class="bg-[#F2F2F0] p-8">
-                      <div class="flex gap-1 mb-5 text-[#D45500]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <div class="reviews-carousel relative max-w-2xl mx-auto">
+                    <div class="reviews-stack">
+                      <div class="reviews-slide" style="opacity: 1">
+                        <div class="bg-[#F2F2F0] p-8">
+                          <div class="flex gap-1 mb-5 text-[#D45500]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                          </div>
+                          <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
+                            "[Placeholder review] The crew showed up on schedule and
+                            the finished pour was exactly what we needed. Great
+                            communication throughout the project."
+                          </p>
+                          <p class="font-heading font-bold text-[#121212] text-sm">
+                            Client Name — Richmond, CA
+                          </p>
+                        </div>
                       </div>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
-                        "[Placeholder review] The crew showed up on schedule and
-                        the finished pour was exactly what we needed. Great
-                        communication throughout the project."
-                      </p>
-                      <p class="font-heading font-bold text-[#121212] text-sm">
-                        Client Name — Richmond, CA
-                      </p>
+                      <div class="reviews-slide" style="opacity: 0">
+                        <div class="bg-[#F2F2F0] p-8">
+                          <div class="flex gap-1 mb-5 text-[#D45500]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                          </div>
+                          <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
+                            "[Placeholder review] Professional from the first
+                            estimate to the final walkthrough. The concrete work
+                            held up perfectly and the site was left clean."
+                          </p>
+                          <p class="font-heading font-bold text-[#121212] text-sm">
+                            Client Name — Richmond, CA
+                          </p>
+                        </div>
+                      </div>
+                      <div class="reviews-slide" style="opacity: 0">
+                        <div class="bg-[#F2F2F0] p-8">
+                          <div class="flex gap-1 mb-5 text-[#D45500]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                          </div>
+                          <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
+                            "[Placeholder review] Precision work and a crew that
+                            clearly knew what they were doing. Would hire again for
+                            our next project."
+                          </p>
+                          <p class="font-heading font-bold text-[#121212] text-sm">
+                            Client Name — Richmond, CA
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="bg-[#F2F2F0] p-8">
-                      <div class="flex gap-1 mb-5 text-[#D45500]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <div class="flex items-center justify-center gap-6 mt-8">
+                      <button
+                        id="reviews-prev"
+                        type="button"
+                        aria-label="Previous review"
+                        class="reviews-arrow"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                      </button>
+                      <div class="flex items-center gap-2">
+                        <button type="button" class="reviews-dot" data-slide="0" aria-label="Go to review 1"><span class="reviews-dot-bar active"></span></button>
+                        <button type="button" class="reviews-dot" data-slide="1" aria-label="Go to review 2"><span class="reviews-dot-bar"></span></button>
+                        <button type="button" class="reviews-dot" data-slide="2" aria-label="Go to review 3"><span class="reviews-dot-bar"></span></button>
                       </div>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
-                        "[Placeholder review] Professional from the first
-                        estimate to the final walkthrough. The concrete work
-                        held up perfectly and the site was left clean."
-                      </p>
-                      <p class="font-heading font-bold text-[#121212] text-sm">
-                        Client Name — Richmond, CA
-                      </p>
-                    </div>
-                    <div class="bg-[#F2F2F0] p-8">
-                      <div class="flex gap-1 mb-5 text-[#D45500]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                      </div>
-                      <p class="text-[#4A4A4A] text-sm leading-relaxed mb-6">
-                        "[Placeholder review] Precision work and a crew that
-                        clearly knew what they were doing. Would hire again for
-                        our next project."
-                      </p>
-                      <p class="font-heading font-bold text-[#121212] text-sm">
-                        Client Name — Richmond, CA
-                      </p>
+                      <button
+                        id="reviews-next"
+                        type="button"
+                        aria-label="Next review"
+                        class="reviews-arrow"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -5613,6 +5670,53 @@
               cycleTimer = setInterval(next, CYCLE_MS);
             });
           });
+        })();
+      </script>
+      <script>
+        (function () {
+          var slides = document.querySelectorAll(".reviews-slide");
+          var dots = document.querySelectorAll(".reviews-dot");
+          var bars = document.querySelectorAll(".reviews-dot-bar");
+          var prevBtn = document.getElementById("reviews-prev");
+          var nextBtn = document.getElementById("reviews-next");
+          if (!slides.length) return;
+          var CYCLE_MS = 6000;
+          var current = 0;
+          function show(i) {
+            current = (i + slides.length) % slides.length;
+            slides.forEach(function (s, idx) {
+              s.style.opacity = idx === current ? "1" : "0";
+            });
+            bars.forEach(function (b, idx) {
+              b.classList.toggle("active", idx === current);
+            });
+          }
+          function next() {
+            show(current + 1);
+          }
+          function restart() {
+            clearInterval(cycleTimer);
+            cycleTimer = setInterval(next, CYCLE_MS);
+          }
+          var cycleTimer = setInterval(next, CYCLE_MS);
+          dots.forEach(function (d) {
+            d.addEventListener("click", function () {
+              show(parseInt(d.getAttribute("data-slide"), 10));
+              restart();
+            });
+          });
+          if (prevBtn) {
+            prevBtn.addEventListener("click", function () {
+              show(current - 1);
+              restart();
+            });
+          }
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+              show(current + 1);
+              restart();
+            });
+          }
         })();
       </script>
       <script>
