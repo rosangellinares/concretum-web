@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /unknown
+
+Sitemap: https://concretumoperis.com/sitemap.xml
