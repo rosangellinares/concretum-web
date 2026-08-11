@@ -64,3 +64,31 @@
     right: 1.5rem;
   }
 }
+
+.wm-photo {
+  position: relative;
+  align-self: start;
+}
+
+.wm-photo::after,
+#co-lightbox::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 30%;
+  max-width: 84px;
+  aspect-ratio: 768 / 360;
+  background-image: url("/concretum-web/img-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.85;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+
+#co-lightbox::after {
+  width: 140px;
+  max-width: 140px;
+}
