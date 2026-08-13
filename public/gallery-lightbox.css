@@ -92,3 +92,24 @@
   width: 140px;
   max-width: 140px;
 }
+
+.wm-hero {
+  position: relative;
+}
+
+.wm-hero::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 25%;
+  max-width: 110px;
+  aspect-ratio: 768 / 360;
+  background-image: url("/img-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.85;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
