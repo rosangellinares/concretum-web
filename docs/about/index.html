@@ -4003,28 +4003,14 @@
             line-height: 1.25 !important;
           }
           .mv-grid {
-            display: block !important;
-            position: relative;
-            aspect-ratio: 1 / 1.56;
-            height: auto;
+            display: flex !important;
+            flex-direction: column;
+            gap: 1rem;
           }
           .mv-card {
-            padding: 1rem !important;
-            position: absolute;
-            width: 78%;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem !important;
+            width: 100%;
             box-sizing: border-box;
-          }
-          .mv-grid .mv-card:nth-of-type(1) {
-            top: 0;
-            left: 0;
-          }
-          .mv-grid .mv-card:nth-of-type(2) {
-            top: 50%;
-            left: 20%;
           }
           .mv-icon-box {
             width: 2rem !important;
@@ -4048,10 +4034,6 @@
           .mv-desc {
             font-size: 0.85rem !important;
             line-height: 1.35 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 9;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
           }
           .team-grid {
             gap: 0.75rem !important;
