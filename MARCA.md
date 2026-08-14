@@ -19,10 +19,6 @@ metas español en las páginas.
 - **Correo:** `concretum721@yahoo.com` — es el que usa toda la web.
 - **Teléfono:** `+1 415 729 6060`.
 
-> Incoherencia conocida: la página de Contacto muestra además `info@concretumoperis.com`. El
-> propietario ha confirmado que el oficial es el de Yahoo. **No lo unifiques por tu cuenta**: es un
-> cambio de contenido que él debe pedir explícitamente.
-
 ## Colores
 
 | Uso | Color |
